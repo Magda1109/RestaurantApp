@@ -1,17 +1,10 @@
-﻿using RestaurantApp;
+﻿using RestaurantApp.Entities;
+using RestaurantApp.Repositories;
 
-var stack = new BasicStack<double>();
-stack.Push(4.5);
-stack.Push(43);
-stack.Push(222.0);
+var employeeRepository = new EmployeeRepository();
+employeeRepository.Add(new Employee { FirstName = "Magda" });
+employeeRepository.Add(new Employee { FirstName = "Jan" });
+employeeRepository.Add(new Employee { FirstName = "Kot" });
+employeeRepository.Save();
 
-double sum = 0.0;
-
-while(stack.Count > 0)
-{
-    double item = stack.Pop();
-    Console.WriteLine($"Items: {item}");
-    sum += item;
-}
-
-Console.WriteLine($"Sum: {sum}");
+//Zacznij od "Jak napisać generyczne repozytorium
