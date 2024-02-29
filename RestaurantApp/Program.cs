@@ -1,10 +1,10 @@
 ﻿using RestaurantApp.Entities;
 using RestaurantApp.Repositories;
 
-var employeeRepository = new EmployeeRepository();
+var employeeRepository = new GenericRepository<Employee, int>();
 employeeRepository.Add(new Employee { FirstName = "Magda" });
 employeeRepository.Add(new Employee { FirstName = "Jan" });
 employeeRepository.Add(new Employee { FirstName = "Kot" });
 employeeRepository.Save();
 
-//Zacznij od "Jak napisać generyczne repozytorium
+//Zacznij od "Ograniczenia typów generycznych
